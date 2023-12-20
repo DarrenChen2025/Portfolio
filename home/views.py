@@ -9,3 +9,6 @@ def home(request):
     context = {'projects': projects}
 
     return render(request, 'index.html', context)
+
+def login(request):
+    return render(request, 'login.html')

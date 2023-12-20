@@ -575,3 +575,37 @@ a.icon-up-bg:hover {color: #212121;}
     color: #fff;
     text-align: center;
 }
+
+/* Add this at the bottom of your style.css */
+.form-container {
+    min-height: 100vh; /* This makes sure the container is at least the height of the viewport */
+    display: flex;
+    align-items: center; /* This centers the content vertically */
+    justify-content: center; /* This centers the content horizontally */
+}
+
+.login-heading {
+    margin-bottom: 0.5em; /* Reduce space below the heading */
+}
+
+.form-container .form-group:first-child {
+    margin-top: 0; /* Remove top margin from the first form element */
+}
+
+.form-container {
+    min-height: auto; /* Change this from 100vh to auto if you want the container to wrap content */
+    padding: 1em; /* Adjust padding as needed */
+}
+
+
+.login-heading {
+    margin-bottom: 20px;
+}
+
+.login-form {
+    margin-top: 0px;
+}
+
+.form-group {
+    margin-bottom: 40px; /* Adjust the value as needed */
+}
