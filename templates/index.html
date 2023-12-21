@@ -181,7 +181,8 @@
 
                 <h3>Contact</h3>
                 <img src="static/img/lines.svg" class="img-lines" alt="lines">
-                <form>
+                <form action="{% url 'home' %}" method="POST">
+                    {% csrf_token %}
                     <div class="row">
                         <div class="col-sm-6">
                             <input type="text" name="name" class="form-control mt-x-0" placeholder="Name" required>
@@ -193,7 +194,7 @@
                             <textarea name="message" id="mesaage" class="form-control" placeholder="Message" required></textarea>
                         </div>
                     </div>
-                    <button href="#" class="btn btn-border" type="submit">Send Message <span class="glyphicon glyphicon-send"></span></button>
+                    <button href="#" class="btn btn-border" type="submit" name="contact-form">Send Message <span class="glyphicon glyphicon-send"></span></button>
                 </form>
             </div>
         </section><!-- /.section-form -->
@@ -219,6 +220,8 @@
         </div>
     </footer><!-- /#footer -->
 
+    
+
     <!-- Modals -->
     {% for project in projects %}
     <div id="portfolioItem{{ project.id }}" class="modal fade" role="dialog">
@@ -243,4 +246,4 @@
     {% endfor %}
   
 </body>
-{% endblock %}
+{% endblock content %}

@@ -5,10 +5,16 @@ from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.core.mail import send_mail
+from django.conf import settings
+from .utils import contact
 
 # Create your views here.
 
 def home(request):
+    if request.method == 'POST' and 'contact-form' in request.POST:
+        return contact(request)
+    
     projects = Project.objects.all()
     context = {'projects': projects}
 
