@@ -27,7 +27,12 @@
                         <!-- <li class="page-scroll"><a href="#service">Service</a></li> -->
                         <li class="page-scroll"><a href="#portfolio">Portfolio</a></li>
                         <li class="page-scroll"><a href="#contact">Contact</a></li>
+                        {% if request.user.is_authenticated == False %}
                         <li class="page-scroll"><a href="{% url 'login' %}">Login</a></li>
+                        {% else %}
+                        <li class="page-scroll"><a href="{% url 'logout' %}">Logout</a></li>
+                        {% endif %}
+
                         
                     </ul><!-- /.navbar-nav -->
 
@@ -68,7 +73,7 @@
                         <h2>About</h2>
                         <img src="{% static '/img/lines.svg' %}" class="img-lines" alt="lines">
                         <p>Hello! I'm Alex, a full stuck developer, a Ruby enthusiast, and a guy slighty obsessed for code quality. Also I'm a co-founder of pykod.com. I’m currently available for freelance work. If you have a project that you want to get started or think you need my help with something, then get in touch.</p>
-                        <a href="http://www.grad.illinois.edu/sites/default/files/pdfs/cvsamples.pdf" class="btn btn-fill" target="_blank" download>Download my cv</a>
+                        <a href="http://www.grad.illinois.edu/sites/default/files/pdfs/cvsamples.pdf" class="btn btn-fill" target="_blank" download>Download my resume</a>
                     </div>
                 </div>
             </div>
