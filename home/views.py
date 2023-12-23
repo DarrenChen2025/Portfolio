@@ -28,20 +28,21 @@ def loginUser(request):
         email = request.POST.get('email')
         password = request.POST.get('password')
 
-        # Authenticate user
         try:
+            # Retrieve the user by email
             user = User.objects.get(email=email)
+            # Authenticate user
+            user = authenticate(request, username=user.username, password=password)
 
-        except:
+            if user is not None:
+                login(request, user)
+                return redirect('home')
+            else:
+                messages.error(request, 'Invalid credentials')
+
+        except User.DoesNotExist:
+            # User does not exist
             messages.error(request, 'User does not exist')
-        
-        user = authenticate(request, username=user.username, password=password)
-
-        if user is not None:
-            login(request, user)
-            return redirect('home')
-        else:
-            messages.error(request, 'Invalid credentials')
 
     return render(request, 'login.html')
 
