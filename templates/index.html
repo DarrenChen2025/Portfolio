@@ -72,7 +72,7 @@
                         <h2>About</h2>
                         <img src="{% static '/img/lines.svg' %}" class="img-lines" alt="lines">
                         <p>Hello! I'm Darren, a software engineer with a keen interest in data analytics. I'm currently on the lookout for a summer internship where i can apply my skills and grow professionally. As an aspiring developer, I'm constantly exploring new technologies and methodologies to enhance my understanding and proficiency in this field. Let's get in touch if you have a project or an opportunity where my skills can come to good use!</p>
-                        <a href="http://www.grad.illinois.edu/sites/default/files/pdfs/cvsamples.pdf" class="btn btn-fill" target="_blank" download>Download my resume</a>
+                        <a href="{% static '/images/Darren_Chen_Resume_Dec2023.pdf' %}" class="btn btn-fill" target="_blank" download>Download my resume</a>
                     </div>
                 </div>
             </div>
@@ -160,12 +160,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-4 col-xs-12">
-                        <p class="counter start" data-to="10" data-speed="2000">0</p>
+                        <p class="counter start" data-to="2" data-speed="2000">0</p>
                         <h4>Years Experience</h4>
                     </div>
                     <div class="col-sm-4 col-xs-12">
-                        <p class="counter start" data-to="120" data-speed="2000">0</p>       
-                        <h4>Projects Delivered</h4>      
+                        <p class="counter start" data-to="5" data-speed="2000">0</p>       
+                        <h4>Projects Made</h4>      
                     </div>
                     <div class="col-sm-4 col-xs-12">
                         <p id="infinity" class="counter" data-from="0" data-to="1" data-speed="1000">0</p>
@@ -228,7 +228,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <a class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></a>
-            <img class="img-res" src="static/img/portfolio-1.jpg" alt="">
+            <img class="img-res" src="{{ project.featured_image.url }}" alt="">
           </div>
           <div class="modal-body">
             <h4 class="modal-title">{{ project.title }}</h4>
